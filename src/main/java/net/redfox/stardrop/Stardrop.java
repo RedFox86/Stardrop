@@ -5,7 +5,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -31,6 +30,8 @@ public class Stardrop {
         context.registerConfig(ModConfig.Type.COMMON, StardropConfigs.SPEC, "stardrop-common.toml");
 
         MinecraftForge.EVENT_BUS.register(this);
+
+        LOGGER.debug("Stardrops registered successfully!");
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
